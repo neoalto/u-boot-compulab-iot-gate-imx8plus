@@ -1,0 +1,35 @@
+if TARGET_IOT_GATE_IMX8PLUS
+
+config SYS_BOARD
+	default "iot-gate-imx8plus"
+
+config SYS_VENDOR
+	default "compulab"
+
+config SYS_CONFIG_NAME
+	default "iot-gate-imx8plus"
+
+config DEFAULT_DEVICE_TREE
+	default "iot-gate-imx8plus"
+
+config DEFAULT_FDT_FILE
+	default "iot-gate-imx8plus.dtb"
+
+choice
+	prompt "IOT-GATE-IMX8PLUS D2 LPDDR4 timing"
+	default IOT_GATE_IMX8PLUS_D2_01061010
+	help
+	  Select the 2 GiB LPDDR4 timing table fitted to the module.
+	  The default table is the CompuLab D2 timing used for Samsung,
+	  Nanya and Kingston IDs. Select the ISSI table only for D2 SOMs
+	  populated with the ISSI LPDDR4 part identified as 0x13000210.
+
+config IOT_GATE_IMX8PLUS_D2_01061010
+	bool "D2 2GiB Samsung/Nanya/Kingston-compatible timing"
+
+config IOT_GATE_IMX8PLUS_D2_ISSI
+	bool "D2 2GiB ISSI 0x13000210 timing"
+
+endchoice
+
+endif

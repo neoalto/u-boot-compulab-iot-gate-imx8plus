@@ -1,0 +1,9 @@
+COMPULAB IOT-GATE-IMX8PLUS BOARD
+M:	CompuLab BSP maintainers <support@compulab.com>
+S:	Orphaned
+F:	board/compulab/iot-gate-imx8plus/
+F:	include/configs/iot-gate-imx8plus.h
+F:	configs/iot-gate-imx8plus_d2_defconfig
+F:	arch/arm/dts/iot-gate-imx8plus*
+F:	arch/arm/dts/ucm-imx8m-plus*
+F:	arch/arm/dts/sb-iotgimx8plus.dtsi
