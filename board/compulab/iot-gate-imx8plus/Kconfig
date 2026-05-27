@@ -15,6 +15,26 @@ config DEFAULT_DEVICE_TREE
 config DEFAULT_FDT_FILE
 	default "iot-gate-imx8plus.dtb"
 
+config SYS_I2C_EEPROM_BUS
+	int
+	default 1
+
+config SYS_I2C_EEPROM_ADDR
+	hex
+	default 0x50
+
+config SYS_I2C_EEPROM_ADDR_LEN
+	int
+	default 1
+
+config SYS_I2C_EEPROM_BUS_SB
+	int
+	default 1
+
+config SYS_I2C_EEPROM_ADDR_SB
+	hex
+	default 0x54
+
 choice
 	prompt "IOT-GATE-IMX8PLUS D2 LPDDR4 timing"
 	default IOT_GATE_IMX8PLUS_D2_01061010

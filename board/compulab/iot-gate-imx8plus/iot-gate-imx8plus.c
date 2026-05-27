@@ -5,7 +5,6 @@
 
 #include <init.h>
 #include <env.h>
-#include <asm/arch/sys_proto.h>
 #include <linux/sizes.h>
 #include <linux/types.h>
 
@@ -18,10 +17,6 @@ int board_phys_sdram_size(phys_size_t *size)
 
 int board_late_init(void)
 {
-#if CONFIG_IS_ENABLED(ENV_IS_IN_MMC)
-	board_late_mmc_env_init();
-#endif
-
 	env_set("board_name", "IOT-GATE-IMX8PLUS");
 	env_set("board_rev", "D2");
 
