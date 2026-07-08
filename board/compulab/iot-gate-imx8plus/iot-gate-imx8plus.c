@@ -21,6 +21,7 @@ int board_phys_sdram_size(phys_size_t *size)
 
 static int iot_gate_note_env_health(void)
 {
+#if CONFIG_IS_ENABLED(ENV_SUPPORT)
 	const char *health = "primary";
 	const char *error = NULL;
 	ulong failures;
@@ -51,6 +52,10 @@ static int iot_gate_note_env_health(void)
 
 	/* Best effort only: never block booting because diagnostics could not save. */
 	return env_save();
+#else
+	/* SPL and configurations without environment support have no gd->env_valid. */
+	return 0;
+#endif
 }
 
 int board_late_init(void)
